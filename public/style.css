@@ -1,0 +1,207 @@
+/* Global styles */
+body {
+    margin: 1rem;
+    font-family: sans-serif;
+    background-color: #E6E6FA
+}
+
+h1 {
+    text-align: center;
+}
+
+h2, h3 {
+    font-weight: bold;
+    margin: 0.5rem;
+}
+
+h2 {
+    margin-bottom: 3rem;
+}
+
+/* Login page styles */
+.title {
+    text-align: center;
+}
+
+.text-input input {
+    display: block;
+    margin: 1rem auto;
+    width: 20rem;
+    height: 0.25rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.text-input input:hover, .text-input input:focus {
+    border-color: rgb(168, 31, 31);
+}
+
+.login-button {
+    display: block;
+    margin: 1rem auto;
+    height: 2.5rem;
+    border: 0.1rem solid black;
+    border-radius: 3.5px;
+    cursor: pointer;
+    background-color: rgb(24, 31, 32);
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: rgb(168, 31, 31);
+}
+
+/* Home page styles */
+.page-title {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.logout-button {
+    float: right;
+    margin-right: 1rem;
+    top: 3rem;
+    height: 2.5rem;
+    border: 0.1rem solid black;
+    border-radius: 3.5px;
+    cursor: pointer;
+    background-color: rgb(24, 31, 32);
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: rgb(168, 31, 31);
+}
+
+.word-input form {
+    display: flex;
+    flex-direction: row;
+}
+
+.word-input form input {
+    display: block;
+    margin: 1rem auto;
+    width: 25rem;
+    height: 0.25rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.word-input form input:hover, .word-input form input:focus {
+    border-color: rgb(168, 31, 31);
+}
+
+.word-input button {
+    display: block;
+    margin: 1rem auto;
+    height: 2.4rem;
+    border: 0.1rem solid black;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background-color: rgb(24, 31, 32);
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.word-input button:hover {
+    background-color: rgb(168, 31, 31);
+}
+
+.word-list-panel {
+    margin: 1rem;
+}
+
+.word-list {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+}
+
+.word-list p {
+    background-color: #BFBFBF;
+    border: 1px solid black;
+    margin: 0.2rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.word-list p:hover {
+    background-color: #343A40;
+    color: white;
+}
+
+/* Game panel styles */
+.congrats-message {
+    text-align: center;
+    font-size: 24px;
+    color: green;
+    margin-top: 20px;
+}
+
+.invalid-message, .invalid-guess {
+    color: red;
+    font-size: 20px;
+}
+
+.score .turns {
+    margin-top: 2.2rem;
+    color: black;
+    font-weight: black;
+}
+
+p {
+    margin: 1rem;
+    text-align: left;
+    padding: 0.2rem;
+}
+
+.game-panel-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: row;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 3rem;
+}
+
+.accepted-guess-panel {
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: break-word;
+    align-content: space-between;
+    margin-top: 1rem;
+    margin-left: 3rem;
+}
+
+.turns {
+    margin-top: 2.2rem;
+    font-weight: bold;
+    margin-left: 2rem;
+    margin-right: 0rem;
+}
+
+.control-panel {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    margin: 1rem;
+}
+
+.history-panel {
+    height: 10rem;
+    overflow-y: auto;
+    float: left;
+    position: relative;
+    margin-left: -5px;
+}
