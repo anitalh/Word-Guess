@@ -47,7 +47,7 @@ class Game {
                 `<div class="congrats-message">${this.getRandomMessage("congrats")}</div>` :
                 this.getRandomMessage("initial");
         } else {
-            this.message = `<div class="invalid-message">${this.getRandomMessage("invalidWord")} "${guessedWord}".</div>`;
+            this.message = `<div class="invalid-message">${this.getRandomMessage("invalidWord")} - "${guessedWord}".</div>`;
         }
     }
 }

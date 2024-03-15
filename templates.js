@@ -29,6 +29,7 @@ const loginPage = () => {
 };
 
 // render home page HTML
+// render home page HTML
 const homePage = (user) => {
   const filteredWords = words.filter(word => !user.game.guessedWords.some(guess => guess.guessedWord === word));
   return `
@@ -50,31 +51,31 @@ const homePage = (user) => {
           </div>
           <div class="game-panel">
             <div class="word-list-panel">
-            <h3 class="title">Acceptable Words List: You can click on the word to guess</h3>
+              <h3 class="title">List of Words for Guessing: Click a word to make a guess</h3>
               <div class="word-list">
                 ${filteredWords.map((word) => `<p class="word">${word}</p>`).join("")}
               </div>
-              <p>Instruction : 
+              <p>Guidelines: 
               <br>
-              1.The secret word is randomly selected from a list of acceptable words. Begin your attempt to guess the word!
+              1. A random word is chosen as the secret. Start guessing to find it!
               <br>
-              2.A guess is deemed invalid if the word guessed is not included in the list of acceptable words.
+              2. Invalid guesses are those not found in our list of words.
               <br>
-              3.Your score is determined by the number of correct guesses you make.
+              3. Your score reflects the accurate guesses made.
               <br>
-              4."If you win the game, simply click on the 'RESTART' button to begin a new round.
-              <br> 
+              4. Win the game and press 'RESTART' for another round.
+              <br>
               </p>
             </div>
             <div class="game-panel-container">
               <p class="turns">
-                Number Of Valid Guesses: ${user.game.numberOfValidGuesses}
+                Total Correct Guesses: ${user.game.numberOfValidGuesses}
                 <br><br>
                 <span className="score">
                 ${
                   user.game.guessedWords.length > 0
                     ? ` 
-                Your Previous Valid Guess: ${user.game.guessedWords[0].guessedWord} matched ${user.game.guessedWords[0].numberOfMatchingLetters} letters with secret word`
+                Latest Correct Guess: ${user.game.guessedWords[0].guessedWord} with ${user.game.guessedWords[0].numberOfMatchingLetters} matching letters`
                     : ""
                 }
                 </span>
@@ -82,11 +83,11 @@ const homePage = (user) => {
               <div class="control-panel">
                 <div class="word-input">
                   <form action="/guess" method="POST"> 
-                    <input id="guess-field" name="guessedWord" placeholder="Type your guess" required ${
-                      user.game.isGameWon ? "disabled" : "enabled"
+                    <input id="guess-field" name="guessedWord" placeholder="Enter your guess" required ${
+                      user.game.isGameWon ? "disabled" : ""
                     }> 
                     <button class="guess-button" type="submit" ${
-                      user.game.isGameWon ? "disabled" : "enabled"
+                      user.game.isGameWon ? "disabled" : ""
                     }>GUESS</button>
                   </form>
                   <div class="message-panel">
@@ -102,12 +103,12 @@ const homePage = (user) => {
                 </div>
               </div>
               <div class="accepted-guess-panel">
-                <h3>Your valid Guesses & Letter Match History</h3>
+                <h3>Your Successful Guesses & Matching Letters</h3>
                 <div class="history-panel">
                     ${user.game.guessedWords
                       .map(
                         (guess) =>
-                          `<div><span class="word">You guessed "${guess.guessedWord}"</span> : <span class="word">matched ${guess.numberOfMatchingLetters} letters with secret word</span></div>`
+                          `<div><span class="word">Guessed "${guess.guessedWord}"</span> : <span class="word">with ${guess.numberOfMatchingLetters} matching letters</span></div>`
                       ).join("")}
                 </div>
               </div>
@@ -126,7 +127,8 @@ const homePage = (user) => {
       </body>
     </html>
     `;
-    };
+};
+
 
 // render HTML for invalid username
 const invalidUserNameHtml = (errorMessage) => {
